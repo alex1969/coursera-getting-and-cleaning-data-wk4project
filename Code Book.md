@@ -7,6 +7,18 @@ output: html_document
 
 This code book summarizes the resulting data fields in tidy.txt.
 
+        For each record it is provided:
+        ======================================
+        - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+        - Triaxial Angular velocity from the gyroscope. 
+        - A 561-feature vector with time and frequency domain variables. 
+        - Its activity label. 
+        - An identifier of the subject who carried out the experiment
+
+        Notes: 
+        ======
+        - Features are normalized and bounded within [-1,1]. Thus dimsionsal units (e.g. m/s^2, g) are not required 
+        - Each feature vector is a row on the text file.
 
 Identifiers
 
