@@ -29,3 +29,15 @@ The R script, run_analysis.R, does the following:
 	Creates a tidy dataset that consists of the average (mean) value of each variable for each subject and activity pair.
 
 	The result is stored in the file tidy.txt.
+
+Implementation of run_analysis.R
+
+	Create three variables to use in the function call
+		workingdir = your path in quotes " " (either relative or literal) to the directory you wish to use
+		nameoffile = the name you wish to give to the soon-to-be downloaded file, again, in quotes " "
+		dataseturl = the url for the source of the document, again, in quotes " "
+	
+	Call the function	
+		tidydata2 <- function(workingdir, nameoffile, dataseturl)
+	
+	Look in you working fir for a file called "tidy.txt"
