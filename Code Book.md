@@ -18,7 +18,7 @@ This code book summarizes the resulting data fields in tidy.txt.
         Notes: 
         ======
         - Features are normalized and bounded within [-1,1]. Thus dimsionsal units (e.g. m/s^2, g) are not required 
-        - Each feature vector is a row on the text file.
+        - Each feature vector is a row on the text file (Anguita et al, 2013).
 
 Identifiers
 
@@ -222,3 +222,9 @@ tidydata2 <- function(workingdir, nameoffile, dataseturl){
 }
 
 ```
+#Refernce
+To use the dataset in publications author(s) must cite the following.
+
+Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+
+This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited
