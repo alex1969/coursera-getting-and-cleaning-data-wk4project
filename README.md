@@ -1,4 +1,4 @@
-# coursera-getting-and-cleaning-data-wk4project
+# Johns Hopksins coursera-getting-and-cleaning-data-wk4project
 
 #Overview
 	Purpose: to demonstrate one's ability to collect, work with, and clean a data set. 
@@ -6,7 +6,7 @@
 	Dataset to be cleaned and tidied: Human Activity Recognition Using Smartphones. 
 	Note:	A full description of the data used in this project can be found at The UCI Machine Learning Repository
 
-Students are required to submit: 
+#Students are required to submit: 
 
 	1) a tidy data set,
 
@@ -16,7 +16,7 @@ Students are required to submit:
 
 	4) a README.md explaining how all of the scripts work and how they are connected.
 
-The R script, run_analysis.R, does the following:
+#The R script, run_analysis.R, does the following:
 
 	Download the dataset if it does not already exist in the working directory
 
@@ -36,7 +36,7 @@ The R script, run_analysis.R, does the following:
 
 	The result is stored in the file tidy.txt.
 
-Implementation of run_analysis.R
+#Implementation of run_analysis.R
 
 	Create three variables to use in the function call
 		workingdir = your path in quotes " " (either relative or literal) to the directory you wish to use
