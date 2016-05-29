@@ -20,19 +20,19 @@ This code book summarizes the resulting data fields in tidy.txt.
         - Features are normalized and bounded within [-1,1]. Thus dimsionsal units (e.g. m/s^2, g) are not required 
         - Each feature vector is a row on the text file (Anguita et al, 2013).
 
-Identifiers
+#Identifiers
 
 subject - The ID of the test subject
 activity - The type of activity performed when the corresponding measurements were taken
 
-Factors 
+#Factors 
 
 subject
 activity 
 
-Levels + labels
+#Levels + labels
 
-Activity
+        Activity
         Levels  Label                   Description
         
         1       WALKING:                subject was walking during the test
@@ -42,7 +42,7 @@ Activity
         5       STANDING:               subject was standing during the test
         6       LAYING:                 subject was laying down during the test
 
-Subject 
+        Subject 
         Note: 30 subjects = 1 to 30 levels)
         Levels  Label                   Description
         1       None                    None
@@ -51,7 +51,7 @@ Subject
         *       *                       *
         30      *                       *
 
-Selected Features/Measurements
+#Selected Features/Measurements
 
         tBodyAccMeanX
         tBodyAccMeanY
@@ -133,7 +133,7 @@ Selected Features/Measurements
         fBodyBodyGyroJerkMagStd
         fBodyBodyGyroJerkMagMeanFreq
 
-Transormation on data are as follows
+#Transormation on data are as follows
 ```
 tidydata2 <- function(workingdir, nameoffile, dataseturl){
         
@@ -222,7 +222,7 @@ tidydata2 <- function(workingdir, nameoffile, dataseturl){
 }
 
 ```
-#Refernce
+#Reference
 To use the dataset in publications author(s) must cite the following.
 
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
