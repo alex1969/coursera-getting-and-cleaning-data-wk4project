@@ -1,6 +1,6 @@
-# Johns Hopksins coursera-getting-and-cleaning-data-wk4project
+# Johns Hopkins Data Science Getting and Cleaning Data Coursera Week  Four Project
 
-#Overview
+#Project Overview
 	Purpose: To demonstrate one's ability to collect, work with, and clean a data set. 
 	Goal: 	To prepare tidy data that can be used for later analysis. One will be graded by peers on a series of yes/no questions 
 	Dataset to be cleaned and tidied: Human Activity Recognition Using Smartphones (Anguita et al, 2013). 
@@ -46,7 +46,7 @@
 	Call the function	
 		tidydata2 <- function(workingdir, nameoffile, dataseturl)
 	
-	Look in you working fir for a file called "tidy.txt"
+	Look in your working dir for a file called "tidy.txt"
 
 #References
 To use the dataset in publications author(s) must cite the following.
