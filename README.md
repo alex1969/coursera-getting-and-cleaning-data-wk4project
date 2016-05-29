@@ -3,7 +3,7 @@
 #Overview
 	Purpose: To demonstrate one's ability to collect, work with, and clean a data set. 
 	Goal: 	To prepare tidy data that can be used for later analysis. One will be graded by peers on a series of yes/no questions 
-	Dataset to be cleaned and tidied: Human Activity Recognition Using Smartphones. 
+	Dataset to be cleaned and tidied: Human Activity Recognition Using Smartphones (Anguita et al, 2013). 
 	Note:	A full description of the data used in this project can be found at The UCI Machine Learning Repository
 
 #Students are required to submit: 
