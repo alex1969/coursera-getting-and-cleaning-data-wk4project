@@ -1,8 +1,8 @@
 # Johns Hopksins coursera-getting-and-cleaning-data-wk4project
 
 #Overview
-	Purpose: to demonstrate one's ability to collect, work with, and clean a data set. 
-	Goal: 	to prepare tidy data that can be used for later analysis. One will be graded by peers on a series of yes/no questions 
+	Purpose: To demonstrate one's ability to collect, work with, and clean a data set. 
+	Goal: 	To prepare tidy data that can be used for later analysis. One will be graded by peers on a series of yes/no questions 
 	Dataset to be cleaned and tidied: Human Activity Recognition Using Smartphones. 
 	Note:	A full description of the data used in this project can be found at The UCI Machine Learning Repository
 
