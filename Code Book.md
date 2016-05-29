@@ -30,7 +30,8 @@ Activity
         5       STANDING:               subject was standing during the test
         6       LAYING:                 subject was laying down during the test
 
-Subject Note: 30 subjects = 1 to 30 levels)
+Subject 
+        Note: 30 subjects = 1 to 30 levels)
         Levels  Label                   Description
         1       None                    None
         *       *                       *
