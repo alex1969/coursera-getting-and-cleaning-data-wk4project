@@ -10,11 +10,11 @@
 # https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 # 1. Download and unzip the files to the user specified working directory
 # 2. Reads in the data and performs tidying of variables and sets up a logical selection vector
-# 2. Merge the training and the test sets to create one data set.
-# 2. Extract only the measurements on the mean and standard deviation for each measurement. 
-# 3. Use descriptive activity names to name the activities in the data set
-# 4. Appropriately label the data set with descriptive activity names. 
-# 5. Creates a second, independent tidy data set (tidy.txt) with the average of each variable for each activity and each subject. 
+# 3. Merge the training and the test sets to create one data set.
+# 4. Extract only the measurements on the mean and standard deviation for each measurement. 
+# 4. Use descriptive activity names to name the activities in the data set
+# 5. Appropriately label the data set with descriptive activity names. 
+# 6. Creates a second, independent tidy data set (tidy.txt) with the average of each variable for each activity and each subject. 
 
 ##########################################################################################################
 tidydata2 <- function(workingdir, nameoffile, dataseturl){
