@@ -12,9 +12,9 @@
 # 2. Reads in the data and performs tidying of variables and sets up a logical selection vector
 # 3. Merge the training and the test sets to create one data set.
 # 4. Extract only the measurements on the mean and standard deviation for each measurement. 
-# 4. Use descriptive activity names to name the activities in the data set
-# 5. Appropriately label the data set with descriptive activity names. 
-# 6. Creates a second, independent tidy data set (tidy.txt) with the average of each variable for each activity and each subject. 
+# 5. Use descriptive activity names to name the activities in the data set
+# 6. Appropriately label the data set with descriptive activity names. 
+# 7. Creates a second, independent tidy data set (tidy.txt) with the average of each variable for each activity and each subject. 
 
 ##########################################################################################################
 tidydata2 <- function(workingdir, nameoffile, dataseturl){
