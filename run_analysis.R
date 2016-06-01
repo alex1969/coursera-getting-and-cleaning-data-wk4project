@@ -1,11 +1,5 @@
 ##########################################################################################################
 
-## Coursera Getting and Cleaning Data Course Project
-## Alexander Stevens
-## 05-28-2016
-
-# run_analysis.r File Description:
-
 # This script will perform the following steps on the UCI HAR Dataset downloaded from 
 # https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 # 1. Download and unzip the files to the user specified working directory
