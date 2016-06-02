@@ -51,11 +51,11 @@ tidydata2 <- function(workingdir, nameoffile, dataseturl){
         #### Read in All datasets
         trainsubjects <- tbl_df(read.table("UCI HAR Dataset/train/subject_train.txt"))
         trainactivities <- tbl_df(read.table("UCI HAR Dataset/train/Y_train.txt"))
-        trainobs <- tbl_df(read.table("UCI HAR Dataset/train/X_train.txt"))
+        trainobs <- tbl_df(read.table("UCI HAR Dataset/train/X_train.txt"))#[selectedmeasurements]
         
         testsubjects <- tbl_df(read.table("UCI HAR Dataset/test/subject_test.txt"))
         testactivities <- tbl_df(read.table("UCI HAR Dataset/test/Y_test.txt"))
-        testobs <- tbl_df(read.table("UCI HAR Dataset/test/X_test.txt"))
+        testobs <- tbl_df(read.table("UCI HAR Dataset/test/X_test.txt"))#[selectedmeasurements]
 
         rawactivityLabels <- tbl_df(read.table("UCI HAR Dataset/activity_labels.txt"))
         rawfeatures <- tbl_df(read.table("UCI HAR Dataset/features.txt"))
@@ -78,14 +78,28 @@ tidydata2 <- function(workingdir, nameoffile, dataseturl){
         namesofselectedmeasurements <- rbind(data.frame(namesofselectedmeasurements = "subject"), namesofselectedmeasurements)
         names(completedataset) <- c(make.names(namesofselectedmeasurements$namesofselectedmeasurements))
         
-        #### Convert activities & subjects into factors
+        #### Convert activities & subjects into factors ## (bgentry, 2015, line#44, 45)
         completedataset$activity <- factor(completedataset$activity, labels = editedactivityLabels)
         completedataset$subject <- as.factor(completedataset$subject)
         
-        #### Melt and acquire average of each variable for each activity and each subject
+        #### Melt and acquire average of each variable for each activity and each subject ## (bgentry, 2015, line#47, 48)
         completedataset.melted <- melt(completedataset, id = c("subject", "activity"))
         completedataset.mean <- dcast(completedataset.melted, subject + activity ~ variable, mean)
         
         #### Store the dataset
         write.table(completedataset.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
 }
+### Reference
+#/***************************************************************************************
+#        *    Title: run_analysis.R
+#        *    Author: bgentry
+#        *    Date: 03-22-2015
+#        *    Code version: unknown
+#        *    Availability: https://github.com/bgentry/coursera-getting-and-cleaning-data-project/blob/master/run_analysis.R
+#***************************************************************************************/
+
+### Notes*******************************************************************************
+# Use of bgentry's code as cited in this code was due to this author's appreciation for the elegance of how bgentry 
+# created factors and the use of melt (which I have not used before. I chose to incorporate those items in my 
+# code to study and learn how they work. ).
+#***************************************************************************************/
