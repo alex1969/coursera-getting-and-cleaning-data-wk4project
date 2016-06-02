@@ -228,7 +228,15 @@ tidydata2 <- function(workingdir, nameoffile, dataseturl){
         #### Store the dataset
         write.table(completedataset.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
 }
-### Reference
+
+```
+#Reference
+To use the dataset in publications author(s) must cite the following.
+
+Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+
+This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited
+
 #/***************************************************************************************
 #        *    Title: run_analysis.R
 #        *    Author: bgentry
@@ -240,13 +248,5 @@ tidydata2 <- function(workingdir, nameoffile, dataseturl){
 ### Notes*******************************************************************************
 # Use of bgentry's code as cited in this code was due to this author's appreciation for the elegance of how bgentry 
 # created factors and the use of melt (which I have not used in this manor before. i chose to incorporate those items in my 
-# code to study and learn how they work. ) Also, I apprecited
+# code to study and learn how they work. )
 #***************************************************************************************/
-
-```
-#Reference
-To use the dataset in publications author(s) must cite the following.
-
-Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
-
-This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited
