@@ -1,5 +1,12 @@
 ##########################################################################################################
 
+## Coursera Getting and Cleaning Data Course Project
+## Alexander Stevens
+## 05-28-2016
+
+# run_analysis.r File Description:
+##########################################################################################################
+
 # This script will perform the following steps on the UCI HAR Dataset downloaded from 
 # https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 # 1. Download and unzip the files to the user specified working directory
@@ -41,55 +48,41 @@ tidydata2 <- function(workingdir, nameoffile, dataseturl){
         dateDownloaded <- date()
         dateDownloaded
 
-        #### Read in the data then 
+        #### Read in All datasets
+        trainsubjects <- tbl_df(read.table("UCI HAR Dataset/train/subject_train.txt"))
+        trainactivities <- tbl_df(read.table("UCI HAR Dataset/train/Y_train.txt"))
+        trainobs <- tbl_df(read.table("UCI HAR Dataset/train/X_train.txt"))
+        
+        testsubjects <- tbl_df(read.table("UCI HAR Dataset/test/subject_test.txt"))
+        testactivities <- tbl_df(read.table("UCI HAR Dataset/test/Y_test.txt"))
+        testobs <- tbl_df(read.table("UCI HAR Dataset/test/X_test.txt"))
+
         rawactivityLabels <- tbl_df(read.table("UCI HAR Dataset/activity_labels.txt"))
         rawfeatures <- tbl_df(read.table("UCI HAR Dataset/features.txt"))
         
         #### Tidy the activity labels and features; output are clean labels and features
-        editedactivityLabels <- gsub("_", "", rawactivityLabels$V2)
-        editedfeatures <- gsub("-", "", rawfeatures$V2)
+        editedactivityLabels = gsub("_", "", rawactivityLabels$V2)
+        editedfeatures = tolower(gsub("-", "", rawfeatures$V2))
+        editedfeatures = gsub('[()]', '',editedfeatures)
         
         #### Select the measurements for mean and std dev
         selectedmeasurements <- grep(".*mean.*|.*std.*", editedfeatures)
         
-        #### Tidy the measurements names; output is compliant and tidy feature names vector of length 79
-        namesofselectedmeasurements <- editedfeatures[selectedmeasurements]
-        namesofselectedmeasurements = gsub('mean', 'Mean',namesofselectedmeasurements)
-        namesofselectedmeasurements = gsub('std', 'Std',namesofselectedmeasurements)
-        namesofselectedmeasurements <- gsub('[()]', '',namesofselectedmeasurements)
-        
-        #### Load only the relevant data
-        train <- read.table("UCI HAR Dataset/train/X_train.txt")[selectedmeasurements]
-        trainactivities <- read.table("UCI HAR Dataset/train/Y_train.txt")
-        trainsubjects <- read.table("UCI HAR Dataset/train/subject_train.txt")
-        
-        test <- read.table("UCI HAR Dataset/test/X_test.txt")[selectedmeasurements]
-        testactivities <- read.table("UCI HAR Dataset/test/Y_test.txt")
-        testsubjects <- read.table("UCI HAR Dataset/test/subject_test.txt")
-        
-        #### Column bind all tables
-        train <- cbind(trainsubjects, trainactivities, train)
-        test <- cbind(testsubjects, testactivities, test)
-                
         #### Merge the datasets
-        completedataset <- rbind(train, test)
-        
-        ####  Name the vars
-        selectedmeasurements <- grep(".*mean.*|.*std.*", editedfeatures)
+        completedataset <- rbind(cbind(trainsubjects, trainactivities, trainobs[selectedmeasurements]), cbind(testsubjects, testactivities, testobs[selectedmeasurements]))
+
+        #### Tidy the measurements names; output is compliant and tidy feature names 
         namesofselectedmeasurements <- editedfeatures[selectedmeasurements]
-        namesofselectedmeasurements = gsub('mean', 'Mean',namesofselectedmeasurements)
-        namesofselectedmeasurements = gsub('std', 'Std',namesofselectedmeasurements)
-        namesofselectedmeasurements <- gsub('[()]', '',namesofselectedmeasurements)
         namesofselectedmeasurements <- data.frame(namesofselectedmeasurements)
-        namesofselectedmeasurements<- rbind(data.frame(namesofselectedmeasurements = "activity"), namesofselectedmeasurements)
-        namesofselectedmeasurements<- rbind(data.frame(namesofselectedmeasurements = "subject"), namesofselectedmeasurements)
-        colnames(completedataset) <- c(make.names(namesofselectedmeasurements$namesofselectedmeasurements))
+        namesofselectedmeasurements <- rbind(data.frame(namesofselectedmeasurements = "activity"), namesofselectedmeasurements)
+        namesofselectedmeasurements <- rbind(data.frame(namesofselectedmeasurements = "subject"), namesofselectedmeasurements)
+        names(completedataset) <- c(make.names(namesofselectedmeasurements$namesofselectedmeasurements))
         
         #### Convert activities & subjects into factors
         completedataset$activity <- factor(completedataset$activity, labels = editedactivityLabels)
         completedataset$subject <- as.factor(completedataset$subject)
         
-        #### Melt and acuire average of each variable for each activity and each subject
+        #### Melt and acquire average of each variable for each activity and each subject
         completedataset.melted <- melt(completedataset, id = c("subject", "activity"))
         completedataset.mean <- dcast(completedataset.melted, subject + activity ~ variable, mean)
         
