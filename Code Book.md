@@ -230,23 +230,24 @@ tidydata2 <- function(workingdir, nameoffile, dataseturl){
 }
 
 ```
-#Reference
+#References
 To use the dataset in publications author(s) must cite the following.
 
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
 
 This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited
 
-#/***************************************************************************************
-#        *    Title: run_analysis.R
-#        *    Author: bgentry
-#        *    Date: 03-22-2015
-#        *    Code version: unknown
-#        *    Availability: https://github.com/bgentry/coursera-getting-and-cleaning-data-project/blob/master/run_analysis.R
-#***************************************************************************************/
 
-### Notes*******************************************************************************
-# Use of bgentry's code as cited in this code was due to this author's appreciation for the elegance of how bgentry 
-# created factors and the use of melt (which I have not used in this manor before. i chose to incorporate those items in my 
-# code to study and learn how they work. )
-#***************************************************************************************/
+
+Author: bgentry
+Date: 03-22-2015
+Title: run_analysis.R
+Code version: unknown
+Availability: https://github.com/bgentry/coursera-getting-and-cleaning-data-project/blob/master/run_analysis.R
+
+
+#Notes
+Use of bgentry's code as cited in this code was due to this author's appreciation for the elegance of how bgentry 
+created factors and the use of melt (which I have not used in this manor before. i chose to incorporate those items in my 
+code to study and learn how they work. )
+
